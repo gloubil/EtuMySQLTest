@@ -11,13 +11,14 @@ def heartbeat():
     host = request.args.get("host", f"{os.getenv('DB_IP')}")
 
     try:
-        sql = MySQLInstance(host=host, username=username, password=password)
+        sql = MySQLInstance(host=host, user=username, password=password)
         sql.getInstance()
     except Exception as e:
         print(e)
         return {"success" : False}
     return {"success" : True}
     
+
 
 
 
