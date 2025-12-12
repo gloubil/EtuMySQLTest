@@ -8,7 +8,7 @@ app = Flask("EtuAPI")
 def heartbeat():
     username = request.args.get("username", "")
     password = request.args.get("password", "")
-    host = request.args.get("host", f"{os.getenv("DB_IP")}")
+    host = request.args.get("host", f"{os.getenv('DB_IP')}")
 
     try:
         sql = MySQLInstance(host=host, username=username, password=password)
@@ -17,6 +17,7 @@ def heartbeat():
         return {"success" : False}
     return {"success" : True}
     
+
 
 
 
