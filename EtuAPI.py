@@ -12,10 +12,12 @@ def heartbeat():
 
     try:
         sql = MySQLInstance(host=host, username=username, password=password)
+        sql.getInstance()
     except:
         return {"success" : False}
     return {"success" : True}
     
+
 
 
 
